@@ -1,4 +1,5 @@
 package db
+import "database/sql"
 
 type puck struct {
     puck_id int32
@@ -11,7 +12,7 @@ type puck struct {
     space_id int32
 }
 
-func updatePuck(berth string,addr string){
+func delTempPuck(berth string,addr string,db *sql.DB){
     //delete temp data
 
 }
