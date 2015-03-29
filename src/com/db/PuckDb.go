@@ -14,6 +14,5 @@ type puck struct {
 
 func delTempPuck(berth string,addr string,db *sql.DB){
     //delete temp data
-
 }
 

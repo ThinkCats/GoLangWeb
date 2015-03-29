@@ -25,9 +25,9 @@ func main() {
     log.Println("del complete ",i)
 
     log.Println("----- begin insert ----")
-    uu :=[]string{"mm","20","nice"}
-    j := Save("insert into user values (?,?,?)",uu,db)
-    log.Println("insert complete ",j)
+    //uu :=[]string{"mm","20","niciaa"}
+    //j := Save("insert into user values (?,?,?)",db,"ww","12","hii")
+    //log.Println("insert complete ",j)
 }
 
 func Conn() *sql.DB{
@@ -57,9 +57,9 @@ func Del(sql string,args  interface{},db *sql.DB) (int64,error){
     return res.RowsAffected()
 }
 
-func Save(sql string,args []string,db *sql.DB)int64{
+func Save(sql string,db *sql.DB,args ...interface{})int64{
     stmt,_ := db.Prepare(sql)
-    res,_ := stmt.Exec("mm","33","nice")
+    res,_ := stmt.Exec(args)
     k,_ := res.RowsAffected()
     return k
 }
